@@ -1,0 +1,153 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-weight: 500;
+    background-color: rgb(23, 21, 21);
+    color: rgb(231, 46, 46);
+    height: 100hv;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .heart{
+    height:130px;
+    width:130px;
+    box-shadow: 20px 20px 90px #f20044 ;
+    background-color: #f20044;
+    position:relative;
+    animation: animHeart 0.6s linear infinite;
+    margin-bottom: 20px; /* Add margin to separate from captions */
+
+  }
+
+
+  @keyframes animHeart {
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
+    
+  }
+  
+  .heart::before{
+    content:'';
+    position: absolute;
+    height:130px;
+    width:130px;
+    box-shadow: -20px 20px 90px #f20044 ;
+    background-color: #f20044;
+    /* box-shadow: -10px 10px 90px #f20044; */
+    top: -50%;
+    border-radius:50%;
+  }
+  .heart::after{
+    content:'';
+    position: absolute;
+    height:130px;
+    width:130px;
+    box-shadow: 20px -20px 90px #f20044 ;
+    background-color: #f20044;
+    right: -50%;
+    border-radius:50%;
+  }
+  .caption {
+    text-align: center; /* Center align captions */
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px; /* Adjust font size as needed */
+    margin-top: 50px;
+}
+  span{
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+    animation: fadeInOut 1s linear infinite;
+}
+  @keyframes fadeInOut{
+    0%, 100%{
+        opacity: 0;
+    }
+    20%, 80%{
+        opacity: 1;
+    }
+}
+  span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(./heart2.png);
+    background-size: cover;
+    animation: moveShape 1s linear infinite;
+}
+  @keyframes moveShape{
+    0%{
+        transform: translate(0) rotate(0deg);
+    }
+    100%{
+        transform: translate(280px) rotate(360deg);
+    }
+}
+#ending {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-size: 20px;
+    color:  #FFC3DBff;
+    font-weight: 400;
+    letter-spacing: .15em; /* Adjust as needed */
+
+}
+
+#signage {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-size: 20px;
+    color:  #FFC3DBff;
+    font-weight: 400;
+    letter-spacing: .15em; /* Adjust as needed */
+
+}
+
+.caption p{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgb(255, 21, 0); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 4s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+

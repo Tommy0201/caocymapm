@@ -1,0 +1,125 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Charm", cursive;
+  font-weight: 500;
+}
+#opening {
+  font-family: "Playball", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+#fan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6rem;
+  cursor: grab;
+}
+
+#fan:active {
+  cursor: grabbing;
+}
+
+#cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5rem;
+}
+
+.keyboard-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 71rem;
+}
+
+#text {
+  display: flex;
+  align-items: center;
+  width: 56rem;
+  height: 3rem;
+  font-size: 2rem;
+  background-color: plum;
+  color: red;
+  padding: 0 0.6rem;
+  margin: 2.2rem 0;
+  overflow: hidden;
+  border-radius: 0.4cm;
+  font-weight: 400;
+}
+
+#cursor, #fan, #keyboard {
+  user-select: none;
+}
+
+#opening {
+  justify-content: center;
+  font-size: 3rem;
+}
+.key {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 2.2rem;
+  background-color: plum;
+  font-size: 1.2rem;
+  color: rgb(231, 46, 46);
+  border-radius: 0.4cm;
+  padding: 0px 25px 0px 25px;
+  font-weight: 700;
+}
+
+.key.hover {
+  background-color: violet;
+}
+
+.key.wide {
+  width: 9.5rem;
+}
+body {
+  background-color: rgb(23, 21, 21);
+  color: rgb(231, 46, 46);
+
+}
+#opening {
+  justify-content: center;
+}
+
+
+@keyframes shake-grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake-left-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-3.5px); /* Adjust the distance to shake */
+  }
+  100% {
+    transform: translateX(3.5px); /* Adjust the distance to shake */
+  }
+}
