@@ -190,10 +190,6 @@ function handleCursorHover() {
       }
       else if (key.id === "cf-btn") {
         if (textElem.innerText.includes("YES") && !textElem.innerText.includes("NO")) {
-          window.onload = function() {
-            audio.src = "./dangerously.mp3";
-            audio.load(); // Preload the audio file
-          }
           document.body.style.backgroundColor = "black";
           window.location.href="./heart.html";
         } else {
