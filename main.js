@@ -1,3 +1,12 @@
+const audio = document.getElementById("my_audio");
+function playAudio() {
+  audio.play();
+}
+function stopAudio() {
+  audio.pause();
+  audio.currentTime = 0;
+}
+const confirmBtn = document.getElementById("cf-btn");
 const FAN_SPEED = 2;
 
 const textElem = document.getElementById("text");
@@ -8,6 +17,16 @@ const fanPos = { x: 50, y: 50 };
 const cursorPos = { x: 200, y: 112 };
 const cursorVel = { x: 0, y: 0 };
 let isFanClicked = false;
+
+
+window.onload = function() {
+  document.getElementById("my_audio").play();
+}
+
+// confirmBtn.addEventListener("mouseout", () => {
+//   // Stop the audio playback
+//   stopAudio();
+// });
 
 fanElem.addEventListener("dragstart", (e) => e.preventDefault());
 fanElem.addEventListener("mousedown", () => (isFanClicked = true));
@@ -171,6 +190,10 @@ function handleCursorHover() {
       }
       else if (key.id === "cf-btn") {
         if (textElem.innerText.includes("YES") && !textElem.innerText.includes("NO")) {
+          window.onload = function() {
+            audio.src = "./dangerously.mp3";
+            audio.load(); // Preload the audio file
+          }
           document.body.style.backgroundColor = "black";
           window.location.href="./heart.html";
         } else {
