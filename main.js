@@ -1,11 +1,4 @@
 const audio = document.getElementById("my_audio");
-function playAudio() {
-  audio.play();
-}
-function stopAudio() {
-  audio.pause();
-  audio.currentTime = 0;
-}
 const confirmBtn = document.getElementById("cf-btn");
 const FAN_SPEED = 2;
 
@@ -22,11 +15,6 @@ let isFanClicked = false;
 window.onload = function() {
   document.getElementById("my_audio").play();
 }
-
-// confirmBtn.addEventListener("mouseout", () => {
-//   // Stop the audio playback
-//   stopAudio();
-// });
 
 fanElem.addEventListener("dragstart", (e) => e.preventDefault());
 fanElem.addEventListener("mousedown", () => (isFanClicked = true));
@@ -155,6 +143,7 @@ function displayWarningMessage() {
   const warningMessage = document.createElement("div");
   warningMessage.textContent = warningMessages[warningCount];
   warningMessage.style.position = "absolute";
+  warningMessage.style.fontSize="20px";
   warningMessage.style.top = "10px";
   warningMessage.style.left = "50%";
   warningMessage.style.transform = "translateX(-50%)";
@@ -169,7 +158,7 @@ function displayWarningMessage() {
   // Remove the warning message after a short delay
   setTimeout(() => {
     warningMessage.remove();
-  }, 2000); // Adjust the delay as needed
+  }, 3200); // Adjust the delay as needed
 }
 let lastKey = null;
 function handleCursorHover() {
@@ -190,7 +179,6 @@ function handleCursorHover() {
       }
       else if (key.id === "cf-btn") {
         if (textElem.innerText.includes("YES") && !textElem.innerText.includes("NO")) {
-          document.body.style.backgroundColor = "black";
           window.location.href="./heart.html";
         } else {
           textElem.innerText = "";

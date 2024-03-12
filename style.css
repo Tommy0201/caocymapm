@@ -9,12 +9,15 @@ body {
   height: 100vh;
   font-family: "Charm", cursive;
   font-weight: 500;
+  background-color: rgb(255 111 111); /* Background color set to red */
 }
+
 #opening {
   font-family: "Playball", cursive;
   font-weight: 400;
   font-style: normal;
 }
+
 #fan {
   position: absolute;
   top: 0;
@@ -51,8 +54,8 @@ body {
   width: 56rem;
   height: 3rem;
   font-size: 2rem;
-  background-color: plum;
-  color: red;
+  background-color: rgb(231, 46, 46);
+  color: plum;
   padding: 0 0.6rem;
   margin: 2.2rem 0;
   overflow: hidden;
@@ -67,7 +70,9 @@ body {
 #opening {
   justify-content: center;
   font-size: 3rem;
+  color: plum;
 }
+
 .key {
   display: inline-flex;
   justify-content: center;
@@ -75,9 +80,9 @@ body {
   width: 2.4rem;
   height: 2.4rem;
   margin: 2.2rem;
-  background-color: plum;
+  background-color: rgb(231, 46, 46);
   font-size: 1.2rem;
-  color: rgb(231, 46, 46);
+  color: plum;
   border-radius: 0.4cm;
   padding: 0px 25px 0px 25px;
   font-weight: 700;
@@ -90,15 +95,6 @@ body {
 .key.wide {
   width: 9.5rem;
 }
-body {
-  background-color: rgb(23, 21, 21);
-  color: rgb(231, 46, 46);
-
-}
-#opening {
-  justify-content: center;
-}
-
 
 @keyframes shake-grow {
   0% {
